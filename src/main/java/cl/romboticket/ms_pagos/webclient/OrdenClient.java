@@ -9,7 +9,7 @@ import java.util.Map;
 public class OrdenClient {
     private final WebClient webClient;
 
-    public OrdenClient(@Value("http://localhost:8088/api/ordenes")String ordenServidor) {
+    public OrdenClient(@Value("${url.ordenes:http://localhost:8088/api/ordenes}")String ordenServidor) {
         this.webClient = WebClient.builder().baseUrl(ordenServidor).build();
     }
 
